@@ -1,17 +1,17 @@
 <?php
   session_start();
   
-  //require 'vendor/autoload.php';
+  require 'vendor/autoload.php';
 
-  //$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-  //$dotenv->load();
+  $dotenv = Dotenv\Dotenv::createImmutable('/var/www/html/');
+  $dotenv->load();
 
   return [
-      'host' => $HOST,
-	  'porta' => $PORTA,
-	  'banco' => $BANCO,
-	  'usuario' => $USUARIO,
-	  'senha' => $SENHA,
-	  'recaptcha' => $RECAPTCHA
+          'host' => $_SERVER['HOST'],
+	  'porta' => $_SERVER['PORTA'],
+	  'banco' => $_SERVER['BANCO'],
+	  'usuario' => $_SERVER['USUARIO'],
+	  'senha' => $_SERVER['SENHA'],
+	  'recaptcha' => $_SERVER['RECAPTCHA']
   ]; 
 ?>
