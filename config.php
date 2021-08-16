@@ -1,10 +1,5 @@
 <?php
-  session_start();
-  
-  //require 'vendor/autoload.php';
-
-  //$dotenv = Dotenv\Dotenv::createImmutable('/var/www/html/');
-  //$dotenv->load();
+  session_start(); 
 
   return [
           'host' => getenv("POSTGRES_HOST"),
