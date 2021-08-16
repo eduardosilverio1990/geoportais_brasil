@@ -8,8 +8,7 @@ window.onload = function() {
 		center: [-15.0000, -51.0000],
 		zoom: 4,
         maxZoom: 13,
-        minZoom: 4,
-		maxBounds: [[10, -80],[-36, -30]]
+        minZoom: 4
 	});
     
 	//Servidor
@@ -78,7 +77,7 @@ window.onload = function() {
     
     //Mapa de Visao Geral
 	var osmColorido2 = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");	
-	var mapaVisaoGeral = new L.Control.MiniMap(osmColorido2, {mapOptions: {maxBounds: [[10, -80],[-36, -30]]}}).addTo(map);
+	var mapaVisaoGeral = new L.Control.MiniMap(osmColorido2).addTo(map);
   
     //Coordenadas do mouse
 	var coordenadasMouse = new L.control.mousePosition({
