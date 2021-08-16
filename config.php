@@ -10,8 +10,8 @@
           'host' => getenv("HOST"),
 	  'porta' => getenv("PORTA"),
 	  'banco' => getenv("BANCO"),
-	  'usuario' => getenv("USUARIO"),
-	  'senha' => getenv("SENHA"),
+	  'usuario' => getenv("POSTGRES_USER"),
+	  'senha' => getenv("POSTGRES_PASSWORD"),
 	  'recaptcha' => getenv("RECAPTCHA")
   ]; 
 ?>
