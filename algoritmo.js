@@ -50,7 +50,7 @@ window.onload = function() {
 	        markers.clearLayers();
 	        for (var i = 0; i < resultado.length; i++) {	    
 		    var marker = L.marker(new L.LatLng(resultado[i][2], resultado[i][3]));
-		    marker.bindPopup(resultado[i][1]);
+		    marker.bindPopup("<a href=" + resultado[i][1] + " target='_blank'>" + resultado[i][1] + "</a>");
 		    marker.bindTooltip(resultado[i][0]);
 		    markers.addLayer(marker);
 	        }
