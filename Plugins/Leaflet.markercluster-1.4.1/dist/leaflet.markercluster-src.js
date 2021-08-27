@@ -822,7 +822,7 @@ var MarkerClusterGroup = L.MarkerClusterGroup = L.FeatureGroup.extend({
 		var c = ' marker-cluster-';
 		if (childCount < 10) {
 			c += 'small';
-		} else if (childCount < 100) {
+		} else if (childCount < 30) {
 			c += 'medium';
 		} else {
 			c += 'large';
