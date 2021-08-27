@@ -1,5 +1,6 @@
 <?php
       $config = require 'config.php';
+      echo "<script> var servidor = '" . $config['servidor_mapa'] . "'</script>";
 ?>
 <!DOCTYPE html>
 <html>
