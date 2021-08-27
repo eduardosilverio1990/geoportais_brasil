@@ -8,10 +8,7 @@ window.onload = function() {
         zoom: 4,
         maxZoom: 13,
         minZoom: 4
-    });
-    
-    //Server
-    var servidor = 'http://200.17.225.97/geoserver/wms';	
+    });   	
 	
     //Base layers		
     var osm = L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png ", {
