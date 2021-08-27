@@ -46,7 +46,15 @@ window.onload = function() {
             success: function(resultado) {			  
 	        markers.clearLayers();
 	        for (var i = 0; i < resultado.length; i++) {	    
-		    var marker = L.marker(new L.LatLng(resultado[i][2], resultado[i][3]));
+		    var icone = L.icon({
+                      iconUrl: 'icone.png',
+	              iconSize: [25, 41],
+		      iconAnchor: [12, 41],
+		      popupAnchor: [1, -34],
+		      tooltipAnchor: [16, -28]
+                    });			
+		    var marker = L.marker(new L.LatLng(resultado[i][2], resultado[i][3]), {icon: icone});
+		    
 		    marker.bindPopup("<a href=" + resultado[i][1] + " target='_blank'>" + resultado[i][1] + "</a>");
 		    marker.bindTooltip(resultado[i][0]);
 		    markers.addLayer(marker);
