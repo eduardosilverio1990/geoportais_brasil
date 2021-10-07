@@ -23,14 +23,12 @@
 		if($_POST["url"] <> ''){
 			//apaga o url informado do municipio
 		    pg_query($conexao, "delete from urls
-              where (select text(municipios.cd_geocmu) from municipios where unaccent(municipios.nm_municip) = '" . $_POST["municipio"] . "') = urls.cd_geocmu AND
-                    (select text(siglas.geocodigo) from siglas where siglas.sigla = '" . $_POST["estado"] . "') = left(urls.cd_geocmu, 2) AND
+              where (select text(municipios.cd_geocmu) from municipios where unaccent(municipios.nm_municip) = '" . $_POST["municipio"] . "' AND (select text(siglas.geocodigo) from siglas where siglas.sigla = '" . $_POST["estado"] . "') = left(municipios.cd_geocmu, 2)) = urls.cd_geocmu  AND
 	                 urls.url = '" . $_POST["url"] . "'");
 		}else{
 			//apaga todos os urls do municipio
 			pg_query($conexao, "delete from urls
-              where (select text(municipios.cd_geocmu) from municipios where unaccent(municipios.nm_municip) = '" . $_POST["municipio"] . "') = urls.cd_geocmu AND
-                    (select text(siglas.geocodigo) from siglas where siglas.sigla = '" . $_POST["estado"] . "') = left(urls.cd_geocmu, 2)");
+              where (select text(municipios.cd_geocmu) from municipios where unaccent(municipios.nm_municip) = '" . $_POST["municipio"] . "' AND (select text(siglas.geocodigo) from siglas where siglas.sigla = '" . $_POST["estado"] . "') = left(municipios.cd_geocmu, 2)) = urls.cd_geocmu");
 			
 		}	
 		
